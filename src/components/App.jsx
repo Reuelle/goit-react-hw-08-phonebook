@@ -6,9 +6,9 @@ import Login from './pages/Login/Login';
 import Contacts from './pages/Contacts/Contacts';
 import Navigation from './components/Navigation/Navigation';
 
-const PrivateRoute = ({ component: Component, ...rest }) => {
+const PrivateRoute = ({ children }) => {
   const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
-  return isAuthenticated ? <Component {...rest} /> : <Navigate to="/login" />;
+  return isAuthenticated ? children : <Navigate to="/login" />;
 };
 
 function App() {
@@ -18,7 +18,14 @@ function App() {
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/contacts" element={<PrivateRoute component={Contacts} />} />
+        <Route 
+          path="/contacts" 
+          element={
+            <PrivateRoute>
+              <Contacts />
+            </PrivateRoute>
+          } 
+        />
         <Route path="*" element={<Navigate to="/contacts" />} />
       </Routes>
     </Router>
