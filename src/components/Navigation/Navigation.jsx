@@ -1,15 +1,23 @@
+// Correct import statement
+import styles from './Navigation.module.css';
+
+// Assuming `Links` is supposed to be a styled component
 import { useAuth } from '../hooks';
-import { Links } from './Navigation.module.css';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   const { isLoggedIn } = useAuth();
 
   return (
     <nav>
-      <Links to="/" end>
+      <Link to="/" className={styles.link}>
         Home
-      </Links>
-      {isLoggedIn && <Links to="/contacts">Phonebook</Links>}
+      </Link>
+      {isLoggedIn && (
+        <Link to="/contacts" className={styles.link}>
+          Phonebook
+        </Link>
+      )}
     </nav>
   );
 };
