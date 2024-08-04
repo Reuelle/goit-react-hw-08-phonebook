@@ -1,5 +1,5 @@
 import { useAuth } from '../hooks';
-import { Links } from './Navigation.css.module.css';
+import { Links } from './Navigation.module.css';
 
 const Navigation = () => {
   const { isLoggedIn } = useAuth();
