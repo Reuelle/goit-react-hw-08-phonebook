@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Register from '../pages/Register/Register'; // Correct import
-import Login from './pages/Login/Login';
-import Contacts from './pages/Contacts/Contacts';
+import Login from '../pages/Login/Login';
+import Contacts from '../pages/Contacts/Contacts';
 import Navigation from './components/Navigation/Navigation';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
