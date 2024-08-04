@@ -1,7 +1,6 @@
-// Correct import statement
+
 import styles from './Navigation.module.css';
 
-// Assuming `Links` is supposed to be a styled component
 import { useAuth } from '../hooks';
 import { Link } from 'react-router-dom';
 
