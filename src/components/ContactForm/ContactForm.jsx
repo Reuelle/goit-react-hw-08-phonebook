@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/slice/contact';
 import { selectContacts } from 'redux/selector';
@@ -18,10 +17,9 @@ export const ContactForm = () => {
     
     if (contacts.find(contact => contact.name === name)) {
       alert(`${name} is already in contacts`);
-      return false;
+      return;
     }
     dispatch(addContact({ name, number }));
-    return true;
   };
 
   return (
@@ -51,8 +49,4 @@ export const ContactForm = () => {
       </button>
     </form>
   );
-};
-
-ContactForm.propTypes = {
-  contacts: PropTypes.array, // Ensure this matches the expected type
 };
