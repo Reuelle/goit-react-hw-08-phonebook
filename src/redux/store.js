@@ -4,7 +4,7 @@ import { persistStore, persistReducer } from 'redux-persist';
 
 import contactsReducer from './slice/contact';
 import { filterReducer } from './slice/filter';
-import { authReducer } from './auth/auth-slice';
+import { authReducer } from './Auth/Auth-slice';
 
 const persistConfig = {
   key: 'auth',
