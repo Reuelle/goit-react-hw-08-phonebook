@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { useAuth } from './hooks';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
-import { refreshUser } from '../redux/auth/auth-operations';
+import { refreshUser } from '../redux/Auth/Auth-operations';
 import styles from './App.module.css'; // Import the CSS module
 import { Layout } from './Layout';
 import { Loader } from './Loader/Loader';
