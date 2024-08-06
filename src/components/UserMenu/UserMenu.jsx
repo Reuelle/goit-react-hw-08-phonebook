@@ -1,22 +1,23 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { logoutUser } from '../../redux/slice/Auth-slice';
-import css from './UserMenu.module.css';
+import { useDispatch } from 'react-redux';
+import { logOut } from 'redux/Auth/Auth-operations';
+import { useAuth } from '../hooks';
+import defaultAvatar from './default-avatar.png';
+import styles from './UserMenu.module.css'; // Import the CSS module
+import { ReactComponent as AddIcon } from '../icons/logout.svg';
 
-const UserMenu = () => {
+export default function UserMenu() {
   const dispatch = useDispatch();
-  const user = useSelector(state => state.auth.user);
+  const { user } = useAuth();
 
-  const handleLogout = () => {
-    dispatch(logoutUser());
-  };
+  const avatar = defaultAvatar;
 
   return (
-    <div className={css.userMenu}>
-      <p>{user.email}</p>
-      <button onClick={handleLogout}>Logout</button>
+    <div className={styles.container}>
+      <img className={styles.avatar} src={avatar} alt="avatar" />
+      <p className={styles.name}>Welcome {user.name}</p>
+      <button className={styles.button} type="button" onClick={() => dispatch(logOut())}>
+        <AddIcon />
+      </button>
     </div>
   );
-};
-
-export default UserMenu;
+}
