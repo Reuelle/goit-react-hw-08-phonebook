@@ -1,4 +1,4 @@
-/* AuthNavi.module.css */
+
 .link {
   @media only screen and (max-width: 600px) {
     display: flex;
@@ -11,10 +11,9 @@
   border-radius: 4px;
   font-weight: 700;
   color: black;
+}
 
-  /* Apply background color for the active link */
-  &.active {
-    color: #fff;
-    background-color: #1677ff;
-  }
+.link.active {
+  color: #fff;
+  background-color: #1677ff;
 }
