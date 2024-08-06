@@ -1,8 +1,8 @@
-// src/pages/Contacts.jsx
+
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { ContactForm } from '../../components/ContactForm/ContactForm'; // Correct import
-import ContactList from '../../components/ContactList/ContactList'; // Ensure named export if needed
-import Filter from '../../components/Filter/Filter'; // Default export
+import { ContactForm } from '../../components/ContactForm/ContactForm';
+import ContactList from '../../components/ContactList/ContactList'; // Default import
+import Filter from '../../components/Filter/Filter';
 
 function Contacts() {
   return (
