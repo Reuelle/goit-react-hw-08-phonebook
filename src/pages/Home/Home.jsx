@@ -24,7 +24,11 @@ const styles = {
 const Home = () => (
   <div style={styles.container}>
     <h1 style={styles.title}>Phonebook</h1>
-  
+    {/* Uncomment and use the icons as needed */}
+    {/* <BiSolidEditAlt size="75" fill="#2b35c2" />
+    <FcCellPhone size="75" />
+    <FcConferenceCall size="75" />
+    <FcBusinessContact size="75" /> */}
   </div>
 );
 
