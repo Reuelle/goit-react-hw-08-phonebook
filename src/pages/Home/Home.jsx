@@ -23,13 +23,8 @@ const styles = {
 
 const Home = () => (
   <div style={styles.container}>
-    <h1 style={styles.title}>Home page of the Phonebook</h1>
-    <p>
-      <BiSolidEditAlt size="75" fill="#2b35c2" />
-      <FcCellPhone size="75" />
-      <FcConferenceCall size="75" />
-      <FcBusinessContact size="75" />
-    </p>
+    <h1 style={styles.title}>Phonebook</h1>
+  
   </div>
 );
 
