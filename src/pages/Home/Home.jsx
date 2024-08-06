@@ -1,5 +1,4 @@
 import { BiSolidEditAlt } from 'react-icons/bi';
-import { Watermark } from 'antd';
 import {
   FcBusinessContact,
   FcCellPhone,
@@ -23,17 +22,15 @@ const styles = {
 };
 
 const Home = () => (
-  <Watermark gap={[50, 50]} content="Phonebook">
-    <div style={styles.container}>
-      <h1 style={styles.title}>Home page of the Phonebook</h1>
-      <p>
-        <BiSolidEditAlt size="75" fill="#2b35c2" />
-        <FcCellPhone size="75" />
-        <FcConferenceCall size="75" />
-        <FcBusinessContact size="75" />
-      </p>
-    </div>
-  </Watermark>
+  <div style={styles.container}>
+    <h1 style={styles.title}>Home page of the Phonebook</h1>
+    <p>
+      <BiSolidEditAlt size="75" fill="#2b35c2" />
+      <FcCellPhone size="75" />
+      <FcConferenceCall size="75" />
+      <FcBusinessContact size="75" />
+    </p>
+  </div>
 );
 
 export default Home;
