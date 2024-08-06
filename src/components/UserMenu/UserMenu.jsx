@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/Auth/Auth-operations';
 import { useAuth } from '../hooks';
-//import defaultAvatar from './default-avatar.png';
+import defaultAvatar from './icons8-avatar.gif';
 import styles from './UserMenu.module.css'; // Import the CSS module
 //import { ReactComponent as AddIcon } from '../icons/logout.svg';
 
