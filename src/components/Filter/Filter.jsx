@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from '../../redux/slice/filter'; // Adjust the path if needed
 import { selectContacts, selectFilter } from '../../redux/selector'; // Adjusted to the correct path
-import { FcSearch } from 'react-icons/fc';
 import css from './Filter.module.css'; // Import css if you are using it
 
 function Filter() {
