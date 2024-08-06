@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from 'react-redux';
 
+import { useDispatch, useSelector } from 'react-redux';
 import { register } from 'redux/auth/auth-operations';
 import { Button, Form, Input } from 'antd';
 
@@ -13,7 +13,9 @@ const RegisterForm = () => {
 
     if (password === confirm) {
       dispatch(register({ name, email, password }));
-      !isLoading && !error && form.resetFields();
+      if (!isLoading && !error) {
+        form.resetFields();
+      }
     }
   };
 
@@ -38,20 +40,18 @@ const RegisterForm = () => {
       },
     },
   };
+
   return (
     <Form
       {...formItemLayout}
       form={form}
       name="register"
       onFinish={onFinish}
-      size={'default'}
       initialValues={{
         residence: ['zhejiang', 'hangzhou', 'xihu'],
         prefix: '86',
       }}
-      style={{
-        width: 300,
-      }}
+      style={{ width: 300 }}
       scrollToFirstError
     >
       <Form.Item
@@ -60,7 +60,7 @@ const RegisterForm = () => {
         rules={[
           {
             type: 'email',
-            message: 'The input is not valid E-mail!',
+            message: 'The input is not a valid E-mail!',
           },
           {
             required: true,
@@ -101,7 +101,7 @@ const RegisterForm = () => {
                 return Promise.resolve();
               }
               return Promise.reject(
-                new Error('The new password that you entered do not match!')
+                new Error('The passwords you entered do not match!')
               );
             },
           }),
@@ -124,6 +124,7 @@ const RegisterForm = () => {
       >
         <Input />
       </Form.Item>
+
       <Form.Item {...tailFormItemLayout}>
         <Button type="primary" htmlType="submit">
           Register
