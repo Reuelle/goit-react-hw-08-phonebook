@@ -1,6 +1,6 @@
 
 import { useDispatch, useSelector } from 'react-redux';
-import { register } from 'redux/auth/auth-operations';
+import { register } from 'redux/Auth/Auth-operations';
 import { Button, Form, Input } from 'antd';
 
 const RegisterForm = () => {
