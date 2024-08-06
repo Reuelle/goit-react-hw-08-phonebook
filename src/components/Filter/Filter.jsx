@@ -1,21 +1,20 @@
-import React from 'react'; // Add this if not already present
-import { useDispatch, useSelector } from 'react-redux'; // Import useSelector here
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from 'redux/slice/filter';
-import { FcSearch } from 'react-icons/fc';
-// Import Title and InputStyles if they are custom components
-// import Title from 'path/to/Title';
-// import InputStyles from 'path/to/InputStyles'; 
+import { selectContacts, selectFilter } from 'redux/selectors'; // Import selectors
+import { FcSearch } from 'react-icons/fc'; // Import if you plan to use it
 
 function Filter() {
   const dispatch = useDispatch();
   const filter = useSelector(selectFilter);
+  const contacts = useSelector(selectContacts); // Use the selector here
 
   const handleFilterChange = event => {
     dispatch(setFilter(event.target.value.trim()));
   };
 
-  return useSelector(selectContacts).length < 1 ? (
-    <h2>Add your first contact</h2> // Use h2 or another appropriate HTML tag if Title is not a component
+  return contacts.length < 1 ? (
+    <h2>Add your first contact</h2> // Use a standard HTML tag if Title is not a component
   ) : (
     <input // Use standard input if InputStyles is not a component
       type="text"
