@@ -10,9 +10,9 @@
   padding: 8px 16px;
   border-radius: 4px;
   font-weight: 700;
-  color: black;
+  color: #1677ff;
 }
-
+.link:hover,
 .link.active {
   color: #fff;
   background-color: #1677ff;
