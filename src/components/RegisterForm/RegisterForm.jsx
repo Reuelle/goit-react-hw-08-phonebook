@@ -1,7 +1,7 @@
-
 import { useDispatch, useSelector } from 'react-redux';
 import { register } from '../../redux/Auth/Auth-operations';
 import { Button, Form, Input } from 'antd';
+import './RegisterForm.module.css';
 
 const RegisterForm = () => {
   const [form] = Form.useForm();
