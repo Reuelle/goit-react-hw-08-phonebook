@@ -1,7 +1,7 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { ContactForm } from '../../components/ContactForm/ContactForm'; // Updated import
-import ContactList from '../../components/ContactList/ContactList';
-import Filter from '../../components/Filter/Filter';
+import { ContactForm } from '../../components/ContactForm/ContactForm'; // Correct import
+import { ContactList } from '../../components/ContactList/ContactList'; // Use curly braces for named export
+import { Filter } from '../../components/Filter/Filter'; // Use curly braces for named export
 
 function Contacts() {
   return (
