@@ -1,27 +1,64 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import Register from '../pages/Register/Register'; // Correct import
-import Login from '../pages/Login/Login';
-import Contacts from '../pages/Contacts/Contacts';
-import Navigation from './Navigation/Navigation';
+import React, { useEffect, lazy } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
-const PrivateRoute = ({ component: Component, ...rest }) => {
-  const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
-  return isAuthenticated ? <Component {...rest} /> : <Navigate to="/login" />;
-};
+import { useAuth } from './hooks';
+import { RestrictedRoute } from './RestrictedRoute';
+import { PrivateRoute } from './PrivateRoute';
+import { refreshUser } from '../redux/Auth/Auth-operations';
+import { Container } from './App.module.css';
+import { Layout } from './Layout';
+import { Loader } from './Loader/Loader';
+
+const HomePage = lazy(() => import('../pages/Home'));
+const RegisterPage = lazy(() => import('../pages/Register'));
+const LoginPage = lazy(() => import('../pages/Login'));
+const ContactsPage = lazy(() => import('../pages/Contacts'));
 
 function App() {
-  return (
-    <Router>
-      <Navigation />
+  const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
+  return isRefreshing ? ( // if isRefreshing is true, then render Loader, else render Container
+    <Loader /> // Loader - spinner
+  ) : (
+    <Container>
       <Routes>
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/contacts" element={<PrivateRoute component={Contacts} />} />
-        <Route path="*" element={<Navigate to="/contacts" />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route
+            path="registration"
+            element={
+              <RestrictedRoute
+                redirectTo="/contacts"
+                component={<RegisterPage />}
+              />
+            }
+          />
+          <Route
+            path="login"
+            element={
+              <RestrictedRoute
+                redirectTo="/contacts"
+                component={<LoginPage />}
+              />
+            }
+          />
+          <Route
+            path="contacts"
+            element={
+              <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+            }
+          />
+          <Route path="*" element={<Navigate to="/" />} />{' '}
+          {/* redirect to home page */}
+        </Route>
       </Routes>
-    </Router>
+    </Container>
   );
 }
 
