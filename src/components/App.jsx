@@ -5,8 +5,8 @@ import { useDispatch } from 'react-redux';
 import { useAuth } from './hooks';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
-import { refreshUser } from '../redux/Auth/Auth-operations';
-import { Container } from './App.module.css';
+import { refreshUser } from '../redux/auth/auth-operations';
+import styles from './App.module.css'; // Import the CSS module
 import { Layout } from './Layout';
 import { Loader } from './Loader/Loader';
 
@@ -23,10 +23,10 @@ function App() {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return isRefreshing ? ( // if isRefreshing is true, then render Loader, else render Container
-    <Loader /> // Loader - spinner
+  return isRefreshing ? (
+    <Loader />
   ) : (
-    <Container>
+    <div className={styles.container}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
@@ -54,11 +54,10 @@ function App() {
               <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
             }
           />
-          <Route path="*" element={<Navigate to="/" />} />{' '}
-          {/* redirect to home page */}
+          <Route path="*" element={<Navigate to="/" />} />
         </Route>
       </Routes>
-    </Container>
+    </div>
   );
 }
 
