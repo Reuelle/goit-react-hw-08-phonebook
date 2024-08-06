@@ -1,9 +1,9 @@
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/Auth/Auth-operations';
 import { useAuth } from '../hooks';
-import defaultAvatar from './default-avatar.png';
+//import defaultAvatar from './default-avatar.png';
 import styles from './UserMenu.module.css'; // Import the CSS module
-import { ReactComponent as AddIcon } from '../icons/logout.svg';
+//import { ReactComponent as AddIcon } from '../icons/logout.svg';
 
 export default function UserMenu() {
   const dispatch = useDispatch();
