@@ -3,7 +3,7 @@ import { logOut } from 'redux/Auth/Auth-operations';
 import { useAuth } from '../hooks';
 import defaultAvatar from './icons8-avatar.gif';
 import styles from './UserMenu.module.css'; // Import the CSS module
-import { ReactComponent as AddIcon } from '../hooks/icons8-logout-50.png';
+import { ReactComponent as AddIcon } from '../hooks/log-out-svg.svg';
 
 export default function UserMenu() {
   const dispatch = useDispatch();
