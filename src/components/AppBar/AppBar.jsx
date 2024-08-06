@@ -1,7 +1,7 @@
 import React from 'react';
 import Navigation from '../Navigation/Navigation';
 import UserMenu from '../UserMenu/UserMenu';
-import AuthNav from '../AuthNav/AuthNav';
+import AuthNav from '../AuthNavi/AuthNavi';
 import styles from './AppBar.module.css'; // Import the CSS module
 import { useAuth } from '../hooks';
 
