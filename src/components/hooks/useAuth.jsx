@@ -4,7 +4,7 @@ import {
   selectEmail,
   selectIsLoggedIn,
   selectIsRefreshing,
-} from 'redux/Auth/Auth-selectors';
+} from '../../redux/Auth/Auth-selectors';
 
 export const useAuth = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
