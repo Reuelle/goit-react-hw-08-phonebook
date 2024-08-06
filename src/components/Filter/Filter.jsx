@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilter } from 'redux/slice/filter';
-import { selectContacts, selectFilter } from 'redux/selectors'; // Import selectors
+import { setFilter } from '../redux/slice/filter';
+import { selectContacts, selectFilter } from '../redux/selectors'; // Import selectors
 import { FcSearch } from 'react-icons/fc'; // Import if you plan to use it
 
 function Filter() {
