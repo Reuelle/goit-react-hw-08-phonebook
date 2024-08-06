@@ -10,10 +10,10 @@ import styles from './App.module.css'; // Import the CSS module
 import { Layout } from './Layout';
 import { Loader } from './Loader/Loader';
 
-const HomePage = lazy(() => import('../pages/Home'));
-const RegisterPage = lazy(() => import('../pages/Register'));
+const HomePage = lazy(() => import('../pages/Home/Home'));
+const RegisterPage = lazy(() => import('../pages/Register/Register'));
 const LoginPage = lazy(() => import('../pages/Login/Login'));
-const ContactsPage = lazy(() => import('../pages/Contacts'));
+const ContactsPage = lazy(() => import('../pages/Contacts/Contacts'));
 
 function App() {
   const dispatch = useDispatch();
