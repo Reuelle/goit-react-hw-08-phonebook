@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { logoutUser } from '../../redux/slice/auth-slice';
+import { logoutUser } from '../../redux/slice/Auth-slice';
 import css from './UserMenu.module.css';
 
 const UserMenu = () => {
