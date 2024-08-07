@@ -7,7 +7,7 @@ export default function AuthNav() {
   return (
     <div>
       <NavLink to="/registration" className={styles.link} activeClassName={styles.active}>
-        Registration
+        Sign Up
       </NavLink>
       <NavLink to="/login" className={styles.link} activeClassName={styles.active}>
         Login
