@@ -1,13 +1,18 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logOut } from 'redux/Auth/Auth-operations';
 import { useAuth } from '../hooks';
 import defaultAvatar from './icons8-avatar.gif';
-import styles from './UserMenu.module.css'; // Import the CSS module
+import styles from './UserMenu.module.css';
 import { ReactComponent as AddIcon } from '../hooks/log-out-svg.svg';
 
 export default function UserMenu() {
   const dispatch = useDispatch();
-  const { user } = useAuth();
+  const { isLoggedIn, user } = useAuth();
+
+  // Return null or a loading indicator while checking authentication state
+  if (!isLoggedIn) {
+    return null; // or a loading indicator
+  }
 
   const avatar = defaultAvatar;
 
