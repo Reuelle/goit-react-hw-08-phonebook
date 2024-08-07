@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from '../../redux/slice/filter'; // Adjust the path if needed
 import { selectContacts, selectFilter } from '../../redux/selector'; // Adjusted to the correct path
-//import css from './Filter.module.css'; // Import css if you are using it
+// import css from './Filter.module.css'; // Import css if you are using it
 
 function Filter() {
   const dispatch = useDispatch();
   const filter = useSelector(selectFilter);
-  const contacts = useSelector(selectContacts);
+  const contacts = useSelector(selectContacts) || []; // Provide a default value of an empty array
 
   const handleFilterChange = event => {
     dispatch(setFilter(event.target.value.trim()));
