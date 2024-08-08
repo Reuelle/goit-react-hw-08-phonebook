@@ -1,7 +1,7 @@
-// redux/slice/contact.js
+// src/redux/slice/contact.js
 import { createSlice } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
-import { fetchContacts, addContact as asyncAddContact, deleteContact as asyncDeleteContact } from '../operation'; // Correct import path
+import { fetchContacts, addContact as asyncAddContact, deleteContact as asyncDeleteContact } from '../operation';
 
 const contactSlice = createSlice({
   name: 'contacts',
@@ -47,4 +47,4 @@ const contactSlice = createSlice({
 });
 
 export const { addLocalContact, deleteLocalContact, setError, setIsLoading } = contactSlice.actions;
-export default contactSlice.reducer; // Ensure this is a default export
+export default contactSlice.reducer;
