@@ -1,7 +1,7 @@
 // redux/slice/contact.js
 import { createSlice } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
-import { fetchContacts, addContact, deleteContact } from '../operation'; // Ensure this import path is correct
+import { fetchContacts, addContact, deleteContact } from '../operation'; // Import async thunks here
 
 const contactSlice = createSlice({
   name: 'contacts',
