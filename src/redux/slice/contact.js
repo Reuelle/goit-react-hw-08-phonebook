@@ -23,7 +23,7 @@ export const contactsSlice = createSlice({
       })
       .addCase(fetchContacts.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.error.message;
+        state.error = action.payload;
       })
       .addCase(addContact.pending, state => {
         state.isLoading = true;
@@ -35,7 +35,7 @@ export const contactsSlice = createSlice({
       })
       .addCase(addContact.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.error.message;
+        state.error = action.payload;
       })
       .addCase(deleteContact.pending, state => {
         state.isLoading = true;
@@ -49,10 +49,10 @@ export const contactsSlice = createSlice({
       })
       .addCase(deleteContact.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.error.message;
+        state.error = action.payload;
       });
   },
 });
 
-// Correct default export
+export const contactsReducer = contactsSlice.reducer;
 export default contactsSlice.reducer;
