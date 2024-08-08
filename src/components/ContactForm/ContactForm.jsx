@@ -1,50 +1,38 @@
-// components/ContactForm/ContactForm.jsx
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from '../../redux/slice/contact';
-import { selectContacts } from '../../redux/selector';
-import css from './ContactForm.module.css';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addContact } from '../../redux/slice/contact'; // Adjust the path if needed
 
-export const ContactForm = () => {
+function ContactForm() {
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
   const dispatch = useDispatch();
-  const contacts = useSelector(selectContacts) || [];
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const form = e.target;
-    const name = form.elements.name.value;
-    const number = form.elements.number.value;
-    form.reset();
-
-    if (contacts.find(contact => contact.name === name)) {
-      alert(`${name} is already in contacts`);
-      return;
+    if (name && phone) {
+      dispatch(addContact({ name, phone }));
+      setName('');
+      setPhone('');
     }
-
-    dispatch(addContact({ name, number }));
   };
 
   return (
-    <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
-      <label className={css.formLabel}>Name</label>
+    <form onSubmit={handleSubmit}>
       <input
-        className={css.formName}
         type="text"
-        name="name"
-        required
-        placeholder="Enter name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Name"
       />
-      <label className={css.formLabel}>Number</label>
       <input
-        className={css.formNumber}
-        type="tel"
-        name="number"
-        required
-        placeholder="Enter phone number"
+        type="text"
+        value={phone}
+        onChange={(e) => setPhone(e.target.value)}
+        placeholder="Phone"
       />
-      <button className={css.formBtn} type="submit">
-        Add contact
-      </button>
+      <button type="submit">Add Contact</button>
     </form>
   );
-};
+}
+
+export default ContactForm;
