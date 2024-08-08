@@ -13,7 +13,7 @@ import { Loader } from './Loader/Loader';
 const HomePage = lazy(() => import('../pages/Home/Home'));
 const RegisterPage = lazy(() => import('../pages/Register/Register'));
 const LoginPage = lazy(() => import('../pages/Login/Login'));
-const ContactsPage = lazy(() => import('../pages/Contacts/Contacts'));
+const ContactsPage = lazy(() => import('../pages/Contact/Contact'));
 
 function App() {
   const dispatch = useDispatch();
