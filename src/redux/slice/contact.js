@@ -55,4 +55,4 @@ export const contactsSlice = createSlice({
 });
 
 export const contactsReducer = contactsSlice.reducer; // Named export
-
+export default contactSlice.reducer;
