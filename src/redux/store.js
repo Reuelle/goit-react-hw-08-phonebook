@@ -1,9 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import { persistStore, persistReducer } from 'redux-persist';
 
 import contactsReducer from './slice/contact';
-import filterReducer from './slice/filter'; // Ensure correct import
+import filterReducer from './slice/filter';
 import authReducer from './Auth/Auth-slice';
 
 const persistConfig = {
@@ -18,10 +18,9 @@ export const store = configureStore({
     contacts: contactsReducer,
     filter: filterReducer,
   },
-  middleware: getDefaultMiddleware =>
-    getDefaultMiddleware({
-      serializableCheck: false,
-    }),
+  middleware: getDefaultMiddleware({
+    serializableCheck: false,
+  }),
 });
 
 export const persistor = persistStore(store);
