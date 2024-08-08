@@ -1,40 +1,28 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+// Example component file
+import { useDispatch } from 'react-redux';
+import { addContact } from '../../redux/operation'; // Ensure this path is correct
+import PropTypes from 'prop-types';
+import css from '../ContactList/ContactList.module.css';
 
-const API_URL = 'https://65f11210da8c6584131ccbf1.mockapi.io/contacts';
+export const AddContactButton = ({ newContact }) => {
+  const dispatch = useDispatch();
 
-export const fetchContacts = createAsyncThunk(
-  'contacts/fetchContacts',
-  async (_, { rejectWithValue }) => {
-    try {
-      const response = await axios.get(API_URL);
-      return response.data;
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  }
-);
+  const handleAdd = () => dispatch(addContact(newContact));
 
-export const addContact = createAsyncThunk(
-  'contacts/addContact',
-  async (newContact, { rejectWithValue }) => {
-    try {
-      const response = await axios.post(API_URL, newContact);
-      return response.data;
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  }
-);
+  return (
+    <button
+      type="button"
+      className={css.addContactBtn}
+      onClick={handleAdd}
+    >
+      Add Contact
+    </button>
+  );
+};
 
-export const deleteContact = createAsyncThunk(
-  'contacts/deleteContact',
-  async (contactId, { rejectWithValue }) => {
-    try {
-      await axios.delete(`${API_URL}/${contactId}`);
-      return contactId;
-    } catch (error) {
-      return rejectWithValue(error.message);
-    }
-  }
-);
+AddContactButton.propTypes = {
+  newContact: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+  }).isRequired,
+};
