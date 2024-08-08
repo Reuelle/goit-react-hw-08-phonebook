@@ -1,6 +1,7 @@
+// redux/slice/contact.js
 import { createSlice } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
-import { fetchContacts, addContact, deleteContact } from '../operation'; // Correct path
+import { fetchContacts, addContact as asyncAddContact, deleteContact as asyncDeleteContact } from '../operation'; // Correct import path
 
 const contactSlice = createSlice({
   name: 'contacts',
@@ -36,10 +37,10 @@ const contactSlice = createSlice({
         state.error = action.payload;
         state.isLoading = false;
       })
-      .addCase(addContact.fulfilled, (state, action) => {
+      .addCase(asyncAddContact.fulfilled, (state, action) => {
         state.items.push(action.payload);
       })
-      .addCase(deleteContact.fulfilled, (state, action) => {
+      .addCase(asyncDeleteContact.fulfilled, (state, action) => {
         state.items = state.items.filter(contact => contact.id !== action.payload);
       });
   },
