@@ -1,29 +1,25 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from '../../redux/slice/contact';
-import { selectContacts } from '../../redux/selector';
+import { addContact } from 'redux/slice/contact';
+import { selectContacts } from 'redux/selector';
 import css from './ContactForm.module.css';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(selectContacts) || []; // Default to an empty array
+  const contacts = useSelector(selectContacts);
 
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
-    const name = form.elements.name.value;
-    const number = form.elements.number.value;
+    const name = form.elements.name.value.trim();
+    const number = form.elements.number.value.trim();
     form.reset();
     
-    // Check for duplicate contact names
     if (contacts.find(contact => contact.name === name)) {
       alert(`${name} is already in contacts`);
-      return false;
+      return;
     }
-
-    // Dispatch action to add new contact
     dispatch(addContact({ name, number }));
-    return true;
   };
 
   return (
@@ -33,6 +29,7 @@ export const ContactForm = () => {
         className={css.formName}
         type="text"
         name="name"
+        pattern="^[a-zA-Zа-яА-Я\s'-]+$"
         title="Name may contain only letters, apostrophe, dash, and spaces."
         required
         placeholder="Enter name"
@@ -42,7 +39,8 @@ export const ContactForm = () => {
         className={css.formNumber}
         type="tel"
         name="number"
-        title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +."
+        pattern="\+?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+        title="Phone number must be digits and can contain spaces, dashes, parentheses, and can start with +."
         required
         placeholder="Enter phone number"
       />
