@@ -1,7 +1,7 @@
 // redux/slice/contact.js
 import { createSlice } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
-import { fetchContacts, addContact, deleteContact } from '../operation'; // Adjust the path if needed
+import { fetchContacts, addContact, deleteContact } from '../operation'; // Ensure this import path is correct
 
 const contactSlice = createSlice({
   name: 'contacts',
@@ -11,7 +11,6 @@ const contactSlice = createSlice({
     isLoading: false,
   },
   reducers: {
-    // Local actions (sync)
     addLocalContact: (state, action) => {
       state.items.push({ ...action.payload, id: uuidv4() });
     },
@@ -48,4 +47,4 @@ const contactSlice = createSlice({
 });
 
 export const { addLocalContact, deleteLocalContact, setError, setIsLoading } = contactSlice.actions;
-export default contactSlice.reducer;
+export default contactSlice.reducer; // Ensure this is a default export
