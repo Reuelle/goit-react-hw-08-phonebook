@@ -1,22 +1,32 @@
-// components/ContactList/ContactList.jsx
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/slice/contact';
-import { selectFilteredContacts } from '../../redux/selector';
+// src/components/ContactList/ContactList.jsx
+import { useSelector } from 'react-redux';
+import { selectContacts, selectFilter } from '../../redux/selector';
+import { Contact } from '../Contact/Contact';
 import css from './ContactList.module.css';
 
-export const ContactList = () => {
-  const dispatch = useDispatch();
-  const contacts = useSelector(selectFilteredContacts);
+const ContactList = () => {
+  const contacts = useSelector(selectContacts);
+  const filter = useSelector(selectFilter);
+
+  if (!contacts) {
+    return null;
+  }
+
+  const visibleContacts = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(filter.toLowerCase())
+  );
 
   return (
-    <ul className={css.list}>
-      {contacts.map(({ id, name, number }) => (
-        <li key={id} className={css.item}>
-          <p>{name}: {number}</p>
-          <button onClick={() => dispatch(deleteContact(id))}>Delete</button>
-        </li>
-      ))}
-    </ul>
+    <div className={css.wraperContactList}>
+      <ul className={css.contactList}>
+        {visibleContacts.map((contact) => (
+          <li key={contact.id} className={css.contactListItem}>
+            <Contact contact={contact} />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
+
+export default ContactList; // Ensure this is a default export
