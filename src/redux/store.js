@@ -3,9 +3,12 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { combineReducers } from 'redux';
 
+// Import reducers
 import { filterReducer } from './slice/filter';
 import { contactsReducer } from './slice/contact';
+import authReducer from './slice/auth-slice'; // Adjust the path if necessary
 
+// Configuration for redux-persist
 const persistConfig = {
   key: 'root', // This is the key for the persisted state
   storage,
@@ -15,6 +18,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   filter: filterReducer,
   contacts: contactsReducer,
+  auth: authReducer, // Add the auth reducer here
 });
 
 // Wrap rootReducer with persistReducer
