@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import {  fetchContacts, addContact, deleteContact} from '../../redux/slice/contact'; // Ensure this matches the export from your slice file
+import { deleteContact } from '../../redux/slice/contact'; // Ensure this matches the export from your slice file
 import PropTypes from 'prop-types';
 import css from '../ContactList/ContactList.module.css';
 
