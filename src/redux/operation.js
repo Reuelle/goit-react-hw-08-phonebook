@@ -11,9 +11,8 @@ export const fetchContacts = createAsyncThunk(
       localStorage.setItem('contacts', JSON.stringify(response.data));
       return response.data;
     } catch (error) {
-      // Use empty array as fallback data
       const contacts = JSON.parse(localStorage.getItem('contacts')) || [];
-      return rejectWithValue({ message: error.message, fallbackData: contacts });
+      return rejectWithValue(error.message);
     }
   }
 );
