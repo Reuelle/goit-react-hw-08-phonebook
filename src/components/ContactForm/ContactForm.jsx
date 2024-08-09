@@ -16,7 +16,7 @@ export const ContactForm = () => {
     form.reset();
     
     if (contacts.find(contact => contact.name === name)) {
-      alert(${name} is already in contacts);
+      alert(`${name} is already in contacts`); // Use backticks for template literals
       return;
     }
     dispatch(addContact({ name, number }));
