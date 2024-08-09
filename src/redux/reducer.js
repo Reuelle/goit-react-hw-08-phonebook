@@ -15,7 +15,7 @@ const initialFilterState = '';
 export const contactsReducer = createReducer(initialContactsState, {
   [addContact]: (state, action) => [...state, action.payload],
   [deleteContact]: (state, action) =>
-    state.filter(contact => contact.id !== action.payload.id),
+    state.filter(contact => contact.id !== action.payload), // Fixed here
 });
 
 export const filterReducer = createReducer(initialFilterState, {
