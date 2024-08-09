@@ -1,10 +1,10 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from '../../redux/operation';
-import { selectContacts } from '../../redux/selector';
+import { addContact } from '../../redux/operation'; // Ensure correct path
+import { selectContacts } from '../../redux/selector'; // Ensure correct path
 import css from './ContactForm.module.css';
 
-export const ContactForm = () => {
+const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
 
@@ -16,7 +16,7 @@ export const ContactForm = () => {
     form.reset();
     
     if (contacts.find(contact => contact.name === name)) {
-      alert(`${name} is already in contacts`); // Use backticks for template literals
+      alert(`${name} is already in contacts`);
       return;
     }
     dispatch(addContact({ name, number }));
@@ -50,3 +50,5 @@ export const ContactForm = () => {
     </form>
   );
 };
+
+export default ContactForm; // Ensure default export
