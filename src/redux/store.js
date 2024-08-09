@@ -6,16 +6,22 @@ import contactsReducer from './slice/contact';
 import { filterReducer } from './slice/filter';
 import { authReducer } from './Auth/Auth-slice';
 
-const persistConfig = {
+// Configure persistence for contacts as well
+const contactsPersistConfig = {
+  key: 'contacts',
+  storage,
+};
+
+const authPersistConfig = {
   key: 'auth',
   storage,
-  whitelist: ['token'],
+  whitelist: ['token'], // Persist only token in auth
 };
 
 export const store = configureStore({
   reducer: {
-    auth: persistReducer(persistConfig, authReducer),
-    contacts: contactsReducer,
+    auth: persistReducer(authPersistConfig, authReducer),
+    contacts: persistReducer(contactsPersistConfig, contactsReducer), // Persist contacts
     filter: filterReducer,
   },
   middleware: getDefaultMiddleware =>
