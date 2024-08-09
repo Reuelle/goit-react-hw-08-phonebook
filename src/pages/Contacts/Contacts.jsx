@@ -9,7 +9,7 @@ function Contacts() {
     <>
       <HelmetProvider>
         <Helmet>
-          <title>Phonebook📱</title>
+          <title>Phonebook</title>
         </Helmet>
         <ContactForm />
         <h2>Contacts</h2>
