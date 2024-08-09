@@ -1,14 +1,14 @@
 const styles = {
   container: {
-    minHeight: 'calc(50vh - 50px)',
-    minWidth: 'calc(50vw - 50px)',
+    minHeight: 'calc(30vh - 30px)',
+    minWidth: 'calc(30vw - 30px)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
     backgroundColor: '#1677ff', // Blue background
     borderRadius: '10px', // Optional: Add border radius for rounded corners
-    padding: '8px', // Optional: Add padding
+    padding: '20px', // Optional: Add padding
     boxShadow: '0 4px 8px rgba(0,0,0,0.2)', // Optional: Add shadow for depth
   },
   title: {
