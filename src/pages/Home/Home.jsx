@@ -1,7 +1,7 @@
 const styles = {
   container: {
-    minHeight: 'calc(30vh - 30px)',
-    minWidth: 'calc(30vw - 30px)',
+    minHeight: 'calc(20vh - 20px)',
+    minWidth: 'calc(20vw - 20px)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
