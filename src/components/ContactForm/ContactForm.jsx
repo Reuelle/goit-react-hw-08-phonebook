@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from '../../redux/operation'; // Ensure correct path
-import { selectContacts } from '../../redux/selector'; // Ensure correct path
+import { addContact } from '../../redux/operation'; 
+import { selectContacts } from '../../redux/selector'; 
 import css from './ContactForm.module.css';
 
 const ContactForm = () => {
@@ -51,4 +51,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm; // Ensure default export
+export default ContactForm; 
