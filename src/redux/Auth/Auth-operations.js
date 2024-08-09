@@ -5,6 +5,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 // Set the base URL for axios requests
 axios.defaults.baseURL = 'https://connections-api.goit.global/';
 
+
 // Function to set the Authorization header for axios requests
 const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
