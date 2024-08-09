@@ -1,36 +1,47 @@
 /* UserMenu.module.css */
+
 .container {
   display: flex;
   align-items: center;
-  gap: 10px; /* Adjust spacing between elements */
+  gap: 12px;
+  padding: 10px;
 }
 
 .avatar {
-  width: 40px;
-  height: 40px;
+  width: 40px; /* Adjust size as needed */
+  height: 40px; /* Adjust size as needed */
   border-radius: 50%;
 }
 
 .name {
-  margin: 0;
   font-size: 16px;
+  font-weight: 600;
+  color: #333;
 }
 
 .button {
   display: flex;
   align-items: center;
-  background: transparent;
+  background-color: #1677ff; /* Blue background */
+  color: #ffffff; /* White text */
   border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
   cursor: pointer;
   font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #155ab4; /* Darker blue on hover */
 }
 
 .icon {
-  margin-right: 5px;
-   width: 13px; 
-  height: 13px;
+  width: 20px; /* Adjust size as needed */
+  height: 20px; /* Adjust size as needed */
+  margin-right: 8px;
 }
 
 .text {
-  font-size: 14px;
+  font-weight: 500;
 }
