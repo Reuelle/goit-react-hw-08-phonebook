@@ -8,7 +8,7 @@ const styles = {
     flexDirection: 'column',
     backgroundColor: '#1677ff', // Blue background
     borderRadius: '10px', // Optional: Add border radius for rounded corners
-    padding: '20px', // Optional: Add padding
+    padding: '8px', // Optional: Add padding
     boxShadow: '0 4px 8px rgba(0,0,0,0.2)', // Optional: Add shadow for depth
   },
   title: {
