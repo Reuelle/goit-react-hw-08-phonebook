@@ -1,6 +1,6 @@
 
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { ContactForm } from '../../components/ContactForm/ContactForm';
+import ContactForm from '../../components/ContactForm/ContactForm';
 import ContactList from '../../components/ContactList/ContactList'; // Default import
 import Filter from '../../components/Filter/Filter';
 
