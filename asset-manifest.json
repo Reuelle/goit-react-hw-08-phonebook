@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/Expence-Tracker-Project/static/css/main.95f141bb.css",
-    "main.js": "/Expence-Tracker-Project/static/js/main.234b8bae.js",
-    "static/js/544.087c419f.chunk.js": "/Expence-Tracker-Project/static/js/544.087c419f.chunk.js",
-    "static/css/656.937ebc58.chunk.css": "/Expence-Tracker-Project/static/css/656.937ebc58.chunk.css",
-    "static/js/656.ee809c58.chunk.js": "/Expence-Tracker-Project/static/js/656.ee809c58.chunk.js",
-    "static/js/847.3678557d.chunk.js": "/Expence-Tracker-Project/static/js/847.3678557d.chunk.js",
-    "static/css/747.dca3f22e.chunk.css": "/Expence-Tracker-Project/static/css/747.dca3f22e.chunk.css",
-    "static/js/747.112ac7a3.chunk.js": "/Expence-Tracker-Project/static/js/747.112ac7a3.chunk.js",
-    "static/js/907.fc6965b5.chunk.js": "/Expence-Tracker-Project/static/js/907.fc6965b5.chunk.js",
-    "static/js/539.5753dfc9.chunk.js": "/Expence-Tracker-Project/static/js/539.5753dfc9.chunk.js",
-    "index.html": "/Expence-Tracker-Project/index.html",
-    "static/media/log-out-svg.svg": "/Expence-Tracker-Project/static/media/log-out-svg.a95f2b3cf686bf258904ca1c8e77d15c.svg",
-    "main.95f141bb.css.map": "/Expence-Tracker-Project/static/css/main.95f141bb.css.map",
-    "main.234b8bae.js.map": "/Expence-Tracker-Project/static/js/main.234b8bae.js.map",
-    "544.087c419f.chunk.js.map": "/Expence-Tracker-Project/static/js/544.087c419f.chunk.js.map",
-    "656.937ebc58.chunk.css.map": "/Expence-Tracker-Project/static/css/656.937ebc58.chunk.css.map",
-    "656.ee809c58.chunk.js.map": "/Expence-Tracker-Project/static/js/656.ee809c58.chunk.js.map",
-    "847.3678557d.chunk.js.map": "/Expence-Tracker-Project/static/js/847.3678557d.chunk.js.map",
-    "747.dca3f22e.chunk.css.map": "/Expence-Tracker-Project/static/css/747.dca3f22e.chunk.css.map",
-    "747.112ac7a3.chunk.js.map": "/Expence-Tracker-Project/static/js/747.112ac7a3.chunk.js.map",
-    "907.fc6965b5.chunk.js.map": "/Expence-Tracker-Project/static/js/907.fc6965b5.chunk.js.map",
-    "539.5753dfc9.chunk.js.map": "/Expence-Tracker-Project/static/js/539.5753dfc9.chunk.js.map"
+    "main.css": "/goit-react-hw-08-phonebook/static/css/main.95f141bb.css",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.d8fc1cdd.js",
+    "static/js/544.087c419f.chunk.js": "/goit-react-hw-08-phonebook/static/js/544.087c419f.chunk.js",
+    "static/css/656.937ebc58.chunk.css": "/goit-react-hw-08-phonebook/static/css/656.937ebc58.chunk.css",
+    "static/js/656.ee809c58.chunk.js": "/goit-react-hw-08-phonebook/static/js/656.ee809c58.chunk.js",
+    "static/js/847.3678557d.chunk.js": "/goit-react-hw-08-phonebook/static/js/847.3678557d.chunk.js",
+    "static/css/747.dca3f22e.chunk.css": "/goit-react-hw-08-phonebook/static/css/747.dca3f22e.chunk.css",
+    "static/js/747.112ac7a3.chunk.js": "/goit-react-hw-08-phonebook/static/js/747.112ac7a3.chunk.js",
+    "static/js/907.fc6965b5.chunk.js": "/goit-react-hw-08-phonebook/static/js/907.fc6965b5.chunk.js",
+    "static/js/539.5753dfc9.chunk.js": "/goit-react-hw-08-phonebook/static/js/539.5753dfc9.chunk.js",
+    "index.html": "/goit-react-hw-08-phonebook/index.html",
+    "static/media/log-out-svg.svg": "/goit-react-hw-08-phonebook/static/media/log-out-svg.a95f2b3cf686bf258904ca1c8e77d15c.svg",
+    "main.95f141bb.css.map": "/goit-react-hw-08-phonebook/static/css/main.95f141bb.css.map",
+    "main.d8fc1cdd.js.map": "/goit-react-hw-08-phonebook/static/js/main.d8fc1cdd.js.map",
+    "544.087c419f.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/544.087c419f.chunk.js.map",
+    "656.937ebc58.chunk.css.map": "/goit-react-hw-08-phonebook/static/css/656.937ebc58.chunk.css.map",
+    "656.ee809c58.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/656.ee809c58.chunk.js.map",
+    "847.3678557d.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/847.3678557d.chunk.js.map",
+    "747.dca3f22e.chunk.css.map": "/goit-react-hw-08-phonebook/static/css/747.dca3f22e.chunk.css.map",
+    "747.112ac7a3.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/747.112ac7a3.chunk.js.map",
+    "907.fc6965b5.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/907.fc6965b5.chunk.js.map",
+    "539.5753dfc9.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/539.5753dfc9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.95f141bb.css",
-    "static/js/main.234b8bae.js"
+    "static/js/main.d8fc1cdd.js"
   ]
 }
