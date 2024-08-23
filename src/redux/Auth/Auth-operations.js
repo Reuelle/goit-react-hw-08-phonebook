@@ -3,7 +3,7 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 // Set the base URL for axios requests
-axios.defaults.baseURL = 'https://connections-api.goit.global/';
+axios.defaults.baseURL = 'https://expense-tracker.b.goit.study/api/';
 
 
 // Function to set the Authorization header for axios requests
